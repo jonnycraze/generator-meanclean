@@ -21,7 +21,7 @@ if(process.env.VCAP_SERVICES){
   var vcap_services = JSON.parse(process.env.VCAP_SERVICES)
   dburl = vcap_services.mongolab[0].credentials.uri
 } else {
-  var db = require('./config/db');
+  var db = require('./server/config/db');
   dburl = db.url
 }
 

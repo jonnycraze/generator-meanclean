@@ -10,7 +10,7 @@ module.exports = yeoman.generators.Base.extend({
 		this.prompt({
 			type: 'input',
 			name: 'name',
-			message: 'Your project name',
+			message: 'Create a Clean MEAN start',
 			//Defaults to the project's folder name if the input is skipped
 			default: this.appname
 		}, function(answers) {
@@ -52,7 +52,7 @@ module.exports = yeoman.generators.Base.extend({
 
 		  ///// DB Connect 
 		  this.fs.copy(
-		    this.templatePath('_server/_config/db.js'),
+		    this.templatePath('_server/_config/_db.js'),
 		    this.destinationPath('server/config/db.js'));
 
 
@@ -113,7 +113,13 @@ module.exports = yeoman.generators.Base.extend({
 
 		//Install Dependencies
 		install: function() {
-		  this.installDependencies();
+		  this.installDependencies({
+		  	bower: true,
+		  	npm: true,
+		  	callback: function(){
+		  		console.log('everything is ready!');
+		  	}
+		  });
 		}
 	}
 
