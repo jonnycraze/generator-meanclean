@@ -14,5 +14,5 @@ This is a simple clean MEAN stack setup using Yeoman
 <li>Git Clone this Repo</li>
 <li>npm install</li>
 <li>npm link</li>
-<li>yo scotchmean</li>
+<li>yo meanclean</li>
 </ul>
